@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的时间间隔，">
+<meta name="description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的间隔，即连">
 <meta name="keywords" content="网络,TCP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP KeepAlive">
 <meta property="og:url" content="http://yoursite.com/2017/10/29/TCP-KeepAlive/index.html">
 <meta property="og:site_name" content="Ziang&#39;s Blog">
-<meta property="og:description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的时间间隔，">
+<meta property="og:description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的间隔，即连">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-29T06:48:38.000Z">
+<meta property="og:updated_time" content="2017-10-29T06:50:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP KeepAlive">
-<meta name="twitter:description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的时间间隔，">
+<meta name="twitter:description" content="TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。 有三个内核参数用来控制keepalive行为：  net.ipv4. tcp_keepalive_time 最后一次发送数据包的时间与第一次发送keepalive报文之间的间隔，即连">
 
 
 
@@ -313,7 +313,7 @@
         <p>TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。</p>
 <p>有三个内核参数用来控制keepalive行为：</p>
 <ol>
-<li><code>net.ipv4. tcp_keepalive_time</code> 最后一次发送数据包的时间与第一次发送keepalive报文之间的时间间隔，即连接闲置多长时间后开始发送keepalive报文。</li>
+<li><code>net.ipv4. tcp_keepalive_time</code> 最后一次发送数据包的时间与第一次发送keepalive报文之间的间隔，即连接闲置多长时间后开始发送keepalive报文。</li>
 <li><code>net.ipv4.tcp_keepalive_intvl</code> 两次keepalive报文之间的间隔。</li>
 <li><code>net.ipv4.tcp_keepalive_probes</code> 连续多少次keepalive报文没有回应后，认为连接已经断开。</li>
 </ol>
