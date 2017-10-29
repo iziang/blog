@@ -310,27 +310,30 @@
       
         
           
-            <p>TCP KeepAlive报文，与普通TCP报文一样，只是不包含任何数据，所以TCP协议栈发送KeepAlive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。</p>
-<p>有三个内核参数用来控制keepalive行为：</p>
+            <p>tcp keepalive报文，与普通tcp报文一样，只是不包含任何数据，所以tcp协议栈发送keepalive报文不会影响上层应用的数据。如果对端有应答，说明连接正常，否则，可以认为连接断开（网络或者对端的原因）。</p>
+<p>tcp keepalive默认关闭，应用可以通过set socket option的方式打开，有三个内核参数会影响keepalive行为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$sudo</span> sysctl -a | grep keep</div><div class="line">net.ipv4.tcp_keepalive_intvl = 75</div><div class="line">net.ipv4.tcp_keepalive_probes = 9</div><div class="line">net.ipv4.tcp_keepalive_time = 7200</div></pre></td></tr></table></figure>
 <ol>
-<li><code>net.ipv4. tcp_keepalive_time</code> 最后一次发送数据包的时间与第一次发送keepalive报文之间的间隔，即连接闲置多长时间后开始发送keepalive报文。</li>
-<li><code>net.ipv4.tcp_keepalive_intvl</code> 两次keepalive报文之间的间隔。</li>
+<li><code>net.ipv4. tcp_keepalive_time</code> 最后一次发送报文的时间与第一次发送keepalive报文的间隔，即连接闲置多长时间后开始发送keepalive报文。默认为7200s，即2个小时，这个时间太长了。</li>
+<li><code>net.ipv4.tcp_keepalive_intvl</code> 两次keepalive报文的间隔。</li>
 <li><code>net.ipv4.tcp_keepalive_probes</code> 连续多少次keepalive报文没有回应后，认为连接已经断开。</li>
 </ol>
 <p>keepalive主要有两个用途：</p>
 <ol>
-<li>检测连接是否可用，及时发现异常情况。比如A与B之间连接，如果B突然宕机或崩溃，来不及通知A正常断开连接，所以A不知道连接已经不可用了。B重启后没有与A的连接信息，如果A发送数据包，B就会返回RST，通过KeepAlive报文可以及时发现这种异常情况，通知上层应用处理。</li>
-<li>连接保活。现在的服务器或者网关，一般都有保护机制，如果客户端连接idle一段时间（没有数据传输），服务器会主动kill链接，释放其占用的资源。应用通过打开TCP KeepAlive选项，在没有数据传输的时候，定时向服务器发送KeepAlive报文，来保证连接活跃，从而不被kill。</li>
+<li>检测连接是否可用，及时发现异常情况。比如A与B之间连接，如果B突然宕机或崩溃，来不及通知A正常断开连接，所以A不知道连接已经不可用了。B重启后没有与A的连接信息，如果A发送数据包，B就会返回RST，通过keepalive报文可以及时发现这种异常情况，通知上层应用处理。</li>
+<li>连接保活。现在的服务器或者网关，一般都有保护机制，如果客户端连接idle一段时间（没有发送报文），服务器会主动kill链接，释放其占用的资源。应用通过打开TCP KeepAlive选项，在没有数据传输的时候，定时向服务器发送keepalive报文，来保证连接活跃，从而不被kill。</li>
 </ol>
 <p>虽然keepalive能够检查连接是否存活，但更多情况下，应用层一般实现自己的心跳机制，主要原因为：</p>
 <ol>
 <li>keepalive只能检测连接是否正常，但心跳可以确认应用是否正常工作。keepalive是TCP/IP协议栈层面的机制，由操作系统负责，心跳工作在应用层，从更高维度上反映问题。</li>
-<li>应用层可以自定义心跳发送逻辑，更加灵活，当心跳不通时，发送心跳的间隔可以指数递减，从而更快速发现问题，不用等待固定时间</li>
+<li>应用层可以自定义心跳发送逻辑，更加灵活，当心跳不通时，发送心跳的间隔可以指数递减，从而更快速发现问题，不用等待固定时间。</li>
+<li>网络情况很复杂时，keepalive机制会失效</li>
 </ol>
 <p>参考：</p>
 <ul>
 <li><a href="http://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html" target="_blank" rel="external">http://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html</a></li>
 <li><a href="http://www.tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/" target="_blank" rel="external">http://www.tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_e59371cc0102ux5w.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_e59371cc0102ux5w.html</a></li>
 </ul>
 
           
