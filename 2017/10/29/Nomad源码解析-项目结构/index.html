@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="api package 提供访问nomad api的client  client封装了各种函数，用于向nomad api发起http请求   command package 处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求  command/agent package api server，">
+<meta name="description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
 <meta name="keywords" content="调度,容器,docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nomad源码解析-项目结构">
 <meta property="og:url" content="http://yoursite.com/2017/10/29/Nomad源码解析-项目结构/index.html">
 <meta property="og:site_name" content="Ziang&#39;s Blog">
-<meta property="og:description" content="api package 提供访问nomad api的client  client封装了各种函数，用于向nomad api发起http请求   command package 处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求  command/agent package api server，">
+<meta property="og:description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-29T15:27:49.000Z">
+<meta property="og:updated_time" content="2017-10-29T15:32:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nomad源码解析-项目结构">
-<meta name="twitter:description" content="api package 提供访问nomad api的client  client封装了各种函数，用于向nomad api发起http请求   command package 处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求  command/agent package api server，">
+<meta name="twitter:description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
 
 
 
@@ -310,22 +310,11 @@
       
 
       
-        <h4 id="api-package"><a href="#api-package" class="headerlink" title="api package"></a>api package</h4><ol>
-<li><p>提供访问nomad api的client</p>
-</li>
-<li><p>client封装了各种函数，用于向nomad api发起http请求</p>
-</li>
-</ol>
-<h4 id="command-package"><a href="#command-package" class="headerlink" title="command package"></a>command package</h4><ol>
-<li>处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求</li>
-</ol>
-<h4 id="command-agent-package"><a href="#command-agent-package" class="headerlink" title="command/agent package"></a>command/agent package</h4><ol>
-<li>api server，响应nomad client的请求</li>
-</ol>
-<h3 id="nomad-package"><a href="#nomad-package" class="headerlink" title="nomad package"></a>nomad package</h3><ol>
-<li>该package下以endpoint结尾的文件，都是用来处理rpc调用</li>
-</ol>
-<h3 id="client-package"><a href="#client-package" class="headerlink" title="client package"></a>client package</h3>
+        <h3 id="api-package"><a href="#api-package" class="headerlink" title="api package"></a>api package</h3><p>提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。</p>
+<h3 id="command-package"><a href="#command-package" class="headerlink" title="command package"></a>command package</h3><p>处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。</p>
+<h3 id="command-agent-package"><a href="#command-agent-package" class="headerlink" title="command/agent package"></a>command/agent package</h3><p>api server，响应nomad client的请求。</p>
+<h3 id="nomad-package"><a href="#nomad-package" class="headerlink" title="nomad package"></a>nomad package</h3><p>该package下以endpoint结尾的文件，都是用来处理rpc调用，nomad server主要逻辑都在该package下。</p>
+
       
     </div>
     
@@ -504,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#api-package"><span class="nav-number">1.</span> <span class="nav-text">api package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#command-package"><span class="nav-number">2.</span> <span class="nav-text">command package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#command-agent-package"><span class="nav-number">3.</span> <span class="nav-text">command/agent package</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nomad-package"><span class="nav-number"></span> <span class="nav-text">nomad package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client-package"><span class="nav-number"></span> <span class="nav-text">client package</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#api-package"><span class="nav-number">1.</span> <span class="nav-text">api package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-package"><span class="nav-number">2.</span> <span class="nav-text">command package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-agent-package"><span class="nav-number">3.</span> <span class="nav-text">command/agent package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nomad-package"><span class="nav-number">4.</span> <span class="nav-text">nomad package</span></a></li></ol></div>
             
 
           </div>

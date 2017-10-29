@@ -310,22 +310,11 @@
       
         
           
-            <h4 id="api-package"><a href="#api-package" class="headerlink" title="api package"></a>api package</h4><ol>
-<li><p>提供访问nomad api的client</p>
-</li>
-<li><p>client封装了各种函数，用于向nomad api发起http请求</p>
-</li>
-</ol>
-<h4 id="command-package"><a href="#command-package" class="headerlink" title="command package"></a>command package</h4><ol>
-<li>处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求</li>
-</ol>
-<h4 id="command-agent-package"><a href="#command-agent-package" class="headerlink" title="command/agent package"></a>command/agent package</h4><ol>
-<li>api server，响应nomad client的请求</li>
-</ol>
-<h3 id="nomad-package"><a href="#nomad-package" class="headerlink" title="nomad package"></a>nomad package</h3><ol>
-<li>该package下以endpoint结尾的文件，都是用来处理rpc调用</li>
-</ol>
-<h3 id="client-package"><a href="#client-package" class="headerlink" title="client package"></a>client package</h3>
+            <h3 id="api-package"><a href="#api-package" class="headerlink" title="api package"></a>api package</h3><p>提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。</p>
+<h3 id="command-package"><a href="#command-package" class="headerlink" title="command package"></a>command package</h3><p>处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。</p>
+<h3 id="command-agent-package"><a href="#command-agent-package" class="headerlink" title="command/agent package"></a>command/agent package</h3><p>api server，响应nomad client的请求。</p>
+<h3 id="nomad-package"><a href="#nomad-package" class="headerlink" title="nomad package"></a>nomad package</h3><p>该package下以endpoint结尾的文件，都是用来处理rpc调用，nomad server主要逻辑都在该package下。</p>
+
           
         
       
