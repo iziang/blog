@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="docker,调度,容器," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,16 @@
 
 
 
-<meta name="description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
-<meta name="keywords" content="docker,调度,容器">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Nomad源码解析-项目结构">
-<meta property="og:url" content="http://www.ziang.me/2017/10/29/Nomad源码解析-项目结构/index.html">
+<meta name="description" content="technology, blog, linux, tcp, lambda, flink, kafka">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ziang&#39;s Blog">
+<meta property="og:url" content="http://www.ziang.me/tags/etcd/index.html">
 <meta property="og:site_name" content="Ziang&#39;s Blog">
-<meta property="og:description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
+<meta property="og:description" content="technology, blog, linux, tcp, lambda, flink, kafka">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-29T15:33:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nomad源码解析-项目结构">
-<meta name="twitter:description" content="api package提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。 command package处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。 command/agent packageapi server，响应n">
+<meta name="twitter:title" content="Ziang&#39;s Blog">
+<meta name="twitter:description" content="technology, blog, linux, tcp, lambda, flink, kafka">
 
 
 
@@ -120,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ziang.me/2017/10/29/Nomad源码解析-项目结构/"/>
+  <link rel="canonical" href="http://www.ziang.me/tags/etcd/"/>
 
 
 
 
 
-  <title>Nomad源码解析-项目结构 | Ziang's Blog</title>
+  <title>标签: etcd | Ziang's Blog</title>
   
 
 
@@ -145,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,158 +227,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>etcd<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ziang.me/2017/10/29/Nomad源码解析-项目结构/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guo Ziang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ziang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">Nomad源码解析-项目结构</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2017/11/12/Docker源码分析1-服务发现/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">Docker源码分析1-服务发现</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-29T23:26:56+08:00">
-                2017-10-29
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-12T15:12:11+08:00"
+              content="2017-11-12" >
+          11-12
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="api-package"><a href="#api-package" class="headerlink" title="api package"></a>api package</h3><p>提供访问nomad api的client结构，client封装了各种函数，用于向nomad api发起http请求。</p>
-<h3 id="command-package"><a href="#command-package" class="headerlink" title="command package"></a>command package</h3><p>处理nomad的各种subcommand，调用api package中对应的函数向command/agent pacakge中的api server发起请求。</p>
-<h3 id="command-agent-package"><a href="#command-agent-package" class="headerlink" title="command/agent package"></a>command/agent package</h3><p>api server，响应nomad client的请求。</p>
-<h3 id="nomad-package"><a href="#nomad-package" class="headerlink" title="nomad package"></a>nomad package</h3><p>该package下以endpoint结尾的文件，都是用来处理rpc调用，nomad server主要逻辑都在该package下。</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
-          
-            <a href="/tags/调度/" rel="tag"># 调度</a>
-          
-            <a href="/tags/容器/" rel="tag"># 容器</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/10/29/TCP-KeepAlive/" rel="next" title="TCP KeepAlive">
-                <i class="fa fa-chevron-left"></i> TCP KeepAlive
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/12/Docker源码分析1-服务发现/" rel="prev" title="Docker源码分析1-服务发现">
-                Docker源码分析1-服务发现 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -388,8 +282,6 @@
 
 
           
-  
-
 
         </div>
         
@@ -410,17 +302,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -487,22 +370,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#api-package"><span class="nav-number">1.</span> <span class="nav-text">api package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-package"><span class="nav-number">2.</span> <span class="nav-text">command package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-agent-package"><span class="nav-number">3.</span> <span class="nav-text">command/agent package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nomad-package"><span class="nav-number">4.</span> <span class="nav-text">nomad package</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -626,10 +493,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
