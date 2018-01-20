@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Ziang&#39;s Blog">
 <meta property="og:description" content="问题一很多应用在工作的时候需要写文件，这里的文件既可能是普通的文件，也可能是内存文件。容器化后，应用写的文件都在容器的writable layer，这个layer的数据会随着容器的销毁而删除。对于无状态的应用，删除就删除了，问题不大。但如果应用有状态，比如kafka、etcd等，就需要一种方式保留数据。 问题二容器内的应用有共享宿主机上的目录的需求，比如telegraf希望共享/var/run/d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.ziang.me/2018/01/20/docker数据存储解决方案/pictrures/types-of-mounts.png">
-<meta property="og:updated_time" content="2018-01-20T06:17:26.679Z">
+<meta property="og:image" content="https://docs.docker.com/engine/admin/volumes/images/types-of-mounts.png">
+<meta property="og:updated_time" content="2018-01-20T06:18:58.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker数据存储解决方案">
 <meta name="twitter:description" content="问题一很多应用在工作的时候需要写文件，这里的文件既可能是普通的文件，也可能是内存文件。容器化后，应用写的文件都在容器的writable layer，这个layer的数据会随着容器的销毁而删除。对于无状态的应用，删除就删除了，问题不大。但如果应用有状态，比如kafka、etcd等，就需要一种方式保留数据。 问题二容器内的应用有共享宿主机上的目录的需求，比如telegraf希望共享/var/run/d">
-<meta name="twitter:image" content="http://www.ziang.me/2018/01/20/docker数据存储解决方案/pictrures/types-of-mounts.png">
+<meta name="twitter:image" content="https://docs.docker.com/engine/admin/volumes/images/types-of-mounts.png">
 
 
 
@@ -324,7 +324,7 @@
 <li><p>问题三是需要把容器内的目录映射到宿主机上的内存，可以在创建容器时指定<code>--tmpfs /path/in/container</code>，或者更加清晰的<code>--mount</code></p>
 </li>
 </ul>
-<p>三种数据存储解决方案的区别可以简单用下图表示<img src="./pictrures/types-of-mounts.png" alt="types-of-mounts.png"></p>
+<p>三种数据存储解决方案的区别可以简单用下图表示<img src="https://docs.docker.com/engine/admin/volumes/images/types-of-mounts.png" alt="types-of-mounts.png"></p>
 <p>具体细节可以参考<a href="https://docs.docker.com/engine/admin/volumes/" target="_blank" rel="external">https://docs.docker.com/engine/admin/volumes/</a></p>
 
       
