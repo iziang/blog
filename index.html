@@ -242,6 +242,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ziang.me/2018/01/20/docker数据存储解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guo Ziang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ziang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/docker数据存储解决方案/" itemprop="url">docker数据存储解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T13:35:14+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h4><p>很多应用在工作的时候需要写文件，这里的文件既可能是普通的文件，也可能是内存文件。容器化后，应用写的文件都在容器的writable layer，这个layer的数据会随着容器的销毁而删除。对于无状态的应用，删除就删除了，问题不大。但如果应用有状态，比如kafka、etcd等，就需要一种方式保留数据。</p>
+<h4 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h4><p>容器内的应用有共享宿主机上的目录的需求，比如telegraf希望共享/var/run/docker目录，从而可以通过unix socket看到宿主机上的其他容器，进而采集其他容器的性能数据，另外比如应用希望看到宿主机上的配置文件，也需要共享宿主机的目录。</p>
+<h4 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h4><p>容器内的应用有临时数据需要写文件，但不要求持久化，可以容忍数据丢失，虽然可以直接写在writable layer，但性能不能满足要求，所以希望能够直接写宿主机的内存，需要提供一种方式把宿主机的内存mount到容器内的path。</p>
+<p>上面的三个问题，本质需求都是宿主机和容器内应用的数据互通，docker都提供了解决方法，问题一可以通过volume解决，问题二通过bind mounts解决，问题三通过tmpfs解决，</p>
+<p>具体细节可以参考<a href="https://docs.docker.com/engine/admin/volumes/" target="_blank" rel="external">https://docs.docker.com/engine/admin/volumes/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.ziang.me/2017/11/19/Docker-问题集锦/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -814,7 +938,7 @@ sudo ip addr add 192.168.10.1/24  dev docker0
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -880,7 +1004,7 @@ sudo ip addr add 192.168.10.1/24  dev docker0
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
