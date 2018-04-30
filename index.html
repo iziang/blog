@@ -316,7 +316,11 @@
             <p>java有<code>checked</code>和<code>unchecked</code>两种类型的exception，这里的<code>check</code>可以理解为是否能提前预知的意思。<code>RuntimeException</code>是<code>unchecked</code>异常，其他异常都是<code>checked</code>异常。</p>
 <p><code>checked</code>的异常是一般来说是那些肯定会发生的，不可避免的异常，所以需要调用者显式的<code>try catch</code>异常或<code>throw</code>到上层调用者处理，<code>checked</code>异常都是从<code>java.lang.Exception</code>类派生来的。</p>
 <p><code>unchecked</code>异常，也就是<code>RuntimeException</code>，是指那些由编码引起的，只要调用者提前仔细检查。完全可以避免的异常，比如<code>NullPointerException</code>，<code>ArrayIndexOutOfBoundException</code>等。引用StackOverflow上一个非常好的答案：<a href="https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception" target="_blank" rel="external">https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception</a>，摘抄一部分如下：</p>
-<pre><code>Generally RuntimeExceptions are exceptions that can be prevented programmatically. E.g NullPointerException, ArrayIndexOutOfBoundException. If you check for null before calling any method, NullPointerException would never occur. Similarly ArrayIndexOutOfBoundException would never occur if you check the index first. RuntimeException are not checked by the compiler, so it is clean code.
+<pre><code>Generally RuntimeExceptions are exceptions that can be prevented programmatically. E.g NullPointerException, ArrayIndexOutOfBoundException. 
+
+If you check for null before calling any method, NullPointerException would never occur. Similarly ArrayIndexOutOfBoundException would never occur if you check the index first.
+
+RuntimeException are not checked by the compiler, so it is clean code.
 
 EDIT : These days people favor RuntimeException because the clean code it produces. It is totally a personal choice.
 </code></pre><p>一个非常好的评论</p>
