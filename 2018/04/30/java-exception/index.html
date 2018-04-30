@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="technology, blog, linux, tcp, lambda, flink, kafka">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ziang&#39;s Blog">
-<meta property="og:url" content="http://www.ziang.me/archives/2018/index.html">
+<meta name="description" content="java有checked和unchecked两种类型的exception，这里的check可以理解为是否能提前预知的意思。RuntimeException是unchecked异常，其他异常都是checked异常。 checked的异常是一般来说是那些肯定会发生的，不可避免的异常，所以需要调用者显式的try catch异常或throw到上层调用者处理，checked异常都是从java.lang.E">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java exception">
+<meta property="og:url" content="http://www.ziang.me/2018/04/30/java-exception/index.html">
 <meta property="og:site_name" content="Ziang&#39;s Blog">
-<meta property="og:description" content="technology, blog, linux, tcp, lambda, flink, kafka">
+<meta property="og:description" content="java有checked和unchecked两种类型的exception，这里的check可以理解为是否能提前预知的意思。RuntimeException是unchecked异常，其他异常都是checked异常。 checked的异常是一般来说是那些肯定会发生的，不可避免的异常，所以需要调用者显式的try catch异常或throw到上层调用者处理，checked异常都是从java.lang.E">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-30T12:06:27.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ziang&#39;s Blog">
-<meta name="twitter:description" content="technology, blog, linux, tcp, lambda, flink, kafka">
+<meta name="twitter:title" content="java exception">
+<meta name="twitter:description" content="java有checked和unchecked两种类型的exception，这里的check可以理解为是否能提前预知的意思。RuntimeException是unchecked异常，其他异常都是checked异常。 checked的异常是一般来说是那些肯定会发生的，不可避免的异常，所以需要调用者显式的try catch异常或throw到上层调用者处理，checked异常都是从java.lang.E">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ziang.me/archives/2018/"/>
+  <link rel="canonical" href="http://www.ziang.me/2018/04/30/java-exception/"/>
 
 
 
 
 
-  <title>归档 | Ziang's Blog</title>
+  <title>java exception | Ziang's Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,148 +229,154 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ziang.me/2018/04/30/java-exception/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guo Ziang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ziang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">java exception</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T19:57:21+08:00">
+                2018-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/30/java-exception/" itemprop="url">
-              
-                <span itemprop="name">java exception</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-30T19:57:21+08:00"
-              content="2018-04-30" >
-          04-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/10/flink-window/" itemprop="url">
-              
-                <span itemprop="name">flink window</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-10T15:43:37+08:00"
-              content="2018-02-10" >
-          02-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/docker数据存储解决方案/" itemprop="url">
-              
-                <span itemprop="name">docker数据存储解决方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T13:35:14+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <p>java有<code>checked</code>和<code>unchecked</code>两种类型的exception，这里的<code>check</code>可以理解为是否能提前预知的意思。<code>RuntimeException</code>是<code>unchecked</code>异常，其他异常都是<code>checked</code>异常。</p>
+<p><code>checked</code>的异常是一般来说是那些肯定会发生的，不可避免的异常，所以需要调用者显式的<code>try catch</code>异常或<code>throw</code>到上层调用者处理，<code>checked</code>异常都是从<code>java.lang.Exception</code>类派生来的。</p>
+<p><code>unchecked</code>异常，也就是<code>RuntimeException</code>，是指那些由编码引起的，只要调用者提前仔细检查。完全可以避免的异常，比如<code>NullPointerException</code>，<code>ArrayIndexOutOfBoundException</code>等。引用StackOverflow上一个非常好的答案：<a href="https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception" target="_blank" rel="external">https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception</a>，摘抄一部分如下：</p>
+<pre><code>Generally RuntimeExceptions are exceptions that can be prevented programmatically. E.g NullPointerException, ArrayIndexOutOfBoundException. If you check for null before calling any method, NullPointerException would never occur. Similarly ArrayIndexOutOfBoundException would never occur if you check the index first. RuntimeException are not checked by the compiler, so it is clean code.
 
+EDIT : These days people favor RuntimeException because the clean code it produces. It is totally a personal choice.
+</code></pre><p>一个非常好的评论</p>
+<pre><code>I like this angle of &quot;runtime exceptions could have been avoided by the caller&quot;. That means you (as the caller of a method) are supposed to make sure they don&apos;t even happen. Whereas checked exceptions are something that you cannot avoid and are instead required to deal with them after the fact. (And yes, since not everyone agrees with the concept of checked exceptions and many people use RuntimeException for everything, this distinction has become a bit muddled). 
+</code></pre>
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/10/flink-window/" rel="next" title="flink window">
+                <i class="fa fa-chevron-left"></i> flink window
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -376,6 +384,8 @@
 
 
           
+  
+
 
         </div>
         
@@ -587,6 +597,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
